@@ -5,6 +5,17 @@ import javax.servlet.http.HttpServletRequest;
 public class RequestUtils {
     private static final String USER = "my_user";
 
+    /**
+     * 是否登录
+     * @param request
+     * @return
+     * true：已登录
+     * false：未登录
+     */
+    public static boolean isLogin (HttpServletRequest request) {
+        return request.getSession().getAttribute(USER) != null;
+    }
+
     public static String getRequestIP(HttpServletRequest request) {
         String clientIp = request.getHeader("x-forwarded-for");
         if (clientIp == null || clientIp.length() == 0 || "unknown".equalsIgnoreCase(clientIp)) {
