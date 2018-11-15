@@ -8,9 +8,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyInterceptor implements HandlerInterceptor {
     private static final Logger LOG = LoggerFactory.getLogger(MyInterceptor.class);
+
+    private static final List<String> ANON = new ArrayList<>();
+
+    static {
+        ANON.add("/");
+        ANON.add("/login");
+        ANON.add("/logout");
+        ANON.add("/api/user/findById");
+    }
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

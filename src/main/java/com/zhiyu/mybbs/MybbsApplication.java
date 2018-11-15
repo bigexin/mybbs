@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author zhiyu
  */
 @SpringBootApplication
-@MapperScan("com.zhiyu.mybbs.backservices.dao")
+@MapperScan("com.zhiyu.mybbs.backservices.dao.*")
 public class MybbsApplication {
 
     public static void main(String[] args) {

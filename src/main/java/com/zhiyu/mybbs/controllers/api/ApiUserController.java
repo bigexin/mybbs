@@ -14,6 +14,6 @@ public class ApiUserController {
 
     @RequestMapping("/findById")
     public User findById(int id) {
-        return userService.findUserById(id);
+        return userService.queryByPk(1, null);
     }
 }

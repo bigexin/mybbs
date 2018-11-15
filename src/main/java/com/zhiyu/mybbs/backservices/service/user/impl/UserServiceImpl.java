@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User findUserById(int id) {
-        return userMapper.findUserById(id);
+    public User queryByPk(Integer id, String email) {
+        return userMapper.queryByPk(id, email);
     }
 }

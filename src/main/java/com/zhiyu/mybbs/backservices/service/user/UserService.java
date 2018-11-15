@@ -7,6 +7,6 @@ import com.zhiyu.mybbs.backservices.entities.User;
  */
 public interface UserService {
 
-    User findUserById(int id);
+    User queryByPk(Integer id, String email);
 
 }
